@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
+           id="cordova-plugin-mwnavbar"
+      version="1.0.0">
+
+    <name>mwnavbar</name>
+    <description>mwnavbar</description>
+
+    <!-- ios -->
+    <platform name="ios">
+        <js-module src="www/mwnavbar.js" name="mwnavbar">
+            <clobbers target="mwnavbar" />
+        </js-module>
+        <config-file target="config.xml" parent="/*">
+            <feature name="setOptions">
+                <param name="ios-package" value="mwnavbar" />
+            </feature>
+        </config-file>
+
+        <header-file src="src/ios/MWNavbar.h" />
+	    <source-file src="src/ios/MWNavbar.m" />
+    </platform>
+</plugin>
