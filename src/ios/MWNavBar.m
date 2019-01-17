@@ -18,7 +18,7 @@
     CGRect statusRect = [[UIApplication sharedApplication] statusBarFrame];
     self.view = [[UIView alloc] initWithFrame:CGRectMake(0, statusRect.size.height, size.width, 44)];
     self.view.backgroundColor = [UIColor colorWithRed:0.95 green:0.95 blue:0.95 alpha:1.0];
-    self.label = [[UILabel alloc] initWithFrame:CGRectMake(44, 12, size.width - 44, 20)];
+    self.label = [[UILabel alloc] initWithFrame:CGRectMake(44, 12, size.width - 44 * 2, 20)];
     self.label.textAlignment = NSTextAlignmentCenter;
     [self.view addSubview:self.label];
     [self.webView.superview addSubview: self.view];
