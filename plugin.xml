@@ -12,7 +12,7 @@
             <clobbers target="mwnavbar" />
         </js-module>
         <config-file target="config.xml" parent="/*">
-            <feature name="setOptions">
+            <feature name="mwnavbar">
                 <param name="ios-package" value="mwnavbar" />
             </feature>
         </config-file>
