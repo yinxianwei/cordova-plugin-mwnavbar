@@ -1,6 +1,6 @@
 {
   "name": "cordova-plugin-mwnavbar",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "navigationBar",
   "cordova": {
     "id": "cordova-plugin-mwnavbar",
