@@ -78,10 +78,10 @@
     self.leftBtn.hidden = YES;
 }
 - (void)goBack:(id)sender {
-    UIWebView *uiwebview = nil;
     if ([self.webView isKindOfClass:[UIWebView class]]) {
-        uiwebview = ((UIWebView*)self.webView);
-        [uiwebview goBack];
+      [(UIWebView *)self.webView goBack];
+    } else if([self.webView isKindOfClass:[WKWebView class]]) {
+          [(WKWebView *)self.webView goBack];
     }
 }
 @end
