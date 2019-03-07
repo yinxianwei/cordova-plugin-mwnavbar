@@ -7,6 +7,7 @@
 //
 
 #import "MWNavbar.h"
+#import <WebKit/WebKit.h>
 
 @implementation mwnavbar
 
