@@ -28,4 +28,6 @@
 
 - (void)hideRightButton:(CDVInvokedUrlCommand*)command;
 - (void)hideLeftButton:(CDVInvokedUrlCommand*)command;
+
+- (void)loadUrl:(CDVInvokedUrlCommand*)command;
 @end

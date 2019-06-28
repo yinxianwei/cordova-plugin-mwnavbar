@@ -78,6 +78,12 @@
 - (void)hideLeftButton:(CDVInvokedUrlCommand*)command {
     self.leftBtn.hidden = YES;
 }
+- (void)loadUrl:(CDVInvokedUrlCommand*)command {
+    [(WKWebView *)self.webView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:@""]]];
+    NSURLRequest* appReq = [NSURLRequest requestWithURL:[NSURL URLWithString:[command argumentAtIndex:0]] cachePolicy:NSURLRequestUseProtocolCachePolicy timeoutInterval:20.0];
+    NSURL* readAccessUrl = [appReq.URL URLByDeletingLastPathComponent];
+    [(WKWebView *)self.webView loadFileURL:appReq.URL allowingReadAccessToURL:readAccessUrl];
+}
 - (void)goBack:(id)sender {
     if ([self.webView isKindOfClass:[UIWebView class]]) {
       [(UIWebView *)self.webView goBack];
