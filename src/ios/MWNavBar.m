@@ -81,7 +81,8 @@
 - (void)loadUrl:(CDVInvokedUrlCommand*)command {
     [(WKWebView *)self.webView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:@""]]];
     NSURLRequest* appReq = [NSURLRequest requestWithURL:[NSURL URLWithString:[command argumentAtIndex:0]] cachePolicy:NSURLRequestUseProtocolCachePolicy timeoutInterval:20.0];
-    NSURL* readAccessUrl = [appReq.URL URLByDeletingLastPathComponent];
+    
+    NSURL* readAccessUrl = [NSURL URLWithString:[command argumentAtIndex:1]];
     [(WKWebView *)self.webView loadFileURL:appReq.URL allowingReadAccessToURL:readAccessUrl];
 }
 - (void)goBack:(id)sender {

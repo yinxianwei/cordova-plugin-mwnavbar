@@ -25,8 +25,8 @@ var mwnavbar = {
     hideLeftButton: function(data) {
         exec(null, null, 'mwnavbar', 'hideLeftButton', [data]);
     },
-    loadUrl: function(data) {
-        exec(null, null, 'mwnavbar', 'loadUrl', [data]);
+    loadUrl: function(data, readAccessPath) {
+        exec(null, null, 'mwnavbar', 'loadUrl', [data, readAccessPath]);
     }
 };
 
