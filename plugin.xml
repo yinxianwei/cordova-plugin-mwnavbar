@@ -1,23 +1,35 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
-           id="cordova-plugin-mwnavbar"
-      version="1.0.0">
+<?xml version="1.0" encoding="UTF-8" ?>
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0" id="cordova-plugin-mwnavbar" version="1.0.0">
 
     <name>mwnavbar</name>
     <description>mwnavbar</description>
-
+    <js-module src="www/mwnavbar.js" name="mwnavbar">
+        <clobbers target="mwnavbar" />
+    </js-module>
     <!-- ios -->
     <platform name="ios">
-        <js-module src="www/mwnavbar.js" name="mwnavbar">
-            <clobbers target="mwnavbar" />
-        </js-module>
         <config-file target="config.xml" parent="/*">
             <feature name="mwnavbar">
                 <param name="ios-package" value="mwnavbar" />
             </feature>
         </config-file>
-
         <header-file src="src/ios/MWNavbar.h" />
-	    <source-file src="src/ios/MWNavbar.m" />
+        <source-file src="src/ios/MWNavbar.m" />
+    </platform>
+    <!-- android -->
+    <platform name="android">
+        <config-file parent="/*" target="res/xml/config.xml">
+            <feature name="mwnavbar">
+                <param name="android-package" value="com.mei1.navbar.mwnavbar" />
+                <param name="onload" value="true" />
+            </feature>
+        </config-file>
+        <config-file parent="/*" target="AndroidManifest.xml"></config-file>
+        <source-file src="src/android/mwnavbar.java" target-dir="src/com/mei1/navbar/mwnavbar" />
+        <!-- drawable src/android/resources -->
+        <resource-file src="src/android/res/drawable-hdpi/ic_mw_back.png" target="res/drawable-hdpi/ic_mw_back.png" />
+        <resource-file src="src/android/res/drawable-mdpi/ic_mw_back.png" target="res/drawable-mdpi/ic_mw_back.png" />
+        <resource-file src="src/android/res/drawable-xhdpi/ic_mw_back.png" target="res/drawable-xhdpi/ic_mw_back.png" />
+        <resource-file src="src/android/res/drawable-xxhdpi/ic_mw_back.png" target="res/drawable-xxhdpi/ic_mw_back.png" />
     </platform>
 </plugin>
